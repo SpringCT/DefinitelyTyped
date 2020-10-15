@@ -31,6 +31,13 @@ import {
 
 export {};
 
+declare module 'react-table' {
+    interface Row<D> extends UseExpandedRowProps<D> { }
+    interface Column<D extends object = {}> extends UseSortByColumnOptions<D> {}
+    interface ColumnInstance<D extends object = {}> extends UseSortByColumnProps<D> { }
+    interface TableOptions<D extends object = {}> extends UseSortByOptions<D> { }
+  }
+  
 /**
  * The empty definitions of below provides a base definition for the parts used by useTable, that can then be extended in the users code.
  *
